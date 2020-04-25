@@ -23,6 +23,7 @@ features = ["span-locations"]
 
 [dependencies]
 unicode-xid = "0.2"
+rustc_lexer = "0.1.0"
 
 [dev-dependencies]
 quote = { version = "1.0", default_features = false }

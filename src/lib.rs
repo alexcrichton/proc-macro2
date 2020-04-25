@@ -96,8 +96,6 @@ use std::path::PathBuf;
 use std::rc::Rc;
 use std::str::FromStr;
 
-#[macro_use]
-mod strnom;
 mod fallback;
 
 #[cfg(not(wrap_proc_macro))]
