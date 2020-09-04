@@ -429,6 +429,21 @@ fn tuple_indexing() {
     assert!(tokens.next().is_none());
 }
 
+#[test]
+fn push_string() {
+    let mut tokens = TokenStream::new();
+    tokens.push_str("let x =");
+    tokens.push_str("1");
+    tokens.push_str(";");
+    let mut tokens = tokens.into_iter();
+    assert_eq!("let", tokens.next().unwrap().to_string());
+    assert_eq!("x", tokens.next().unwrap().to_string());
+    assert_eq!("=", tokens.next().unwrap().to_string());
+    assert_eq!("1", tokens.next().unwrap().to_string());
+    assert_eq!(";", tokens.next().unwrap().to_string());
+    assert!(tokens.next().is_none());
+}
+
 #[cfg(span_locations)]
 #[test]
 fn non_ascii_tokens() {
